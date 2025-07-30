@@ -1,5 +1,5 @@
 import React from "react";
-import doctorImg from "../assets/dentspa.png"; // Replace with your actual image path
+import doctorImg from "../assets/doctor1.png";
 
 export default function HeroSection() {
   return (
@@ -29,9 +29,6 @@ export default function HeroSection() {
             system means that we recognise the importance of having a beautiful,
             natural smile.
           </p>
-          <button className="bg-white text-[#090613] px-6 py-3 rounded-full text-lg hover:bg-gray-200 transition">
-            Book Appointment
-          </button>
         </div>
       </div>
     </section>
