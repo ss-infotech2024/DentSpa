@@ -52,7 +52,11 @@ export function Navigation({ className }: NavigationProps) {
             >
               {item.name}
               {item.hasDropdown && (
-                <svg className="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 12 12">
+                <svg
+                  className="ml-1 w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 12 12"
+                >
                   <path d="M6 8L2 4h8L6 8z" />
                 </svg>
               )}
