@@ -1,8 +1,10 @@
 import React from 'react';
-
+import { Navigation } from '../components/Navigation';
+import Footer from '../components/Footer';
 const Course = () => {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-background text-white min-h-screen">
+      <Navigation />
       {/* Header Section */}
       <div className="container mx-auto text-center py-10">
         <h1 className="text-4xl font-bold text-yellow-500">COURSES</h1>
@@ -94,36 +96,7 @@ const Course = () => {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-gray-100 text-black text-center py-6 mt-10">
-        <div className="container mx-auto">
-          <h3 className="text-xl font-bold">FRESHDENTAL INSTITUTE</h3>
-          <div className="mt-4">
-            <p className="border-l-4 border-yellow-500 pl-2">ADDRESS:</p>
-            <p>46 Craven road, Bayswater, London, W2 3QA</p>
-            <p className="border-l-4 border-yellow-500 pl-2 mt-2">CONTACT:</p>
-            <p>+44 7494052755</p>
-            <p>training@freshdental.co.uk</p>
-          </div>
-          <div className="mt-4 flex justify-center space-x-4">
-            <a href="#" className="text-yellow-500">Courses</a>
-            <a href="#" className="text-yellow-500">About</a>
-            <a href="#" className="text-yellow-500">Testimonials</a>
-            <a href="#" className="text-yellow-500">Contact</a>
-            <a href="#" className="text-yellow-500">Clinic</a>
-            <a href="#" className="text-yellow-500">Alumni ball & awards</a>
-            <a href="#" className="text-yellow-500">Dental referrals</a>
-            <a href="#" className="text-yellow-500">Student login</a>
-            <a href="#" className="text-yellow-500">Shop</a>
-          </div>
-          <div className="mt-4 flex justify-center space-x-4">
-            <span className="text-yellow-500">© 2024 Freshdental Institute. All rights reserved.</span>
-            <a href="#" className="text-yellow-500">Privacy Policy</a>
-            <a href="#" className="text-yellow-500">Terms of Service</a>
-            <a href="#" className="text-yellow-500">Course Cancellation Policy</a>
-            <a href="#" className="text-yellow-500">Cookies Settings</a>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };
