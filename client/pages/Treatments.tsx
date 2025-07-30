@@ -1,4 +1,7 @@
+import Footer from "../components/Footer";
+import { Navigation } from "../components/Navigation";
 import React from "react";
+import { Navigate } from "react-router-dom";
 
 export default function Treatments() {
   const treatments = [
@@ -48,6 +51,7 @@ export default function Treatments() {
 
   return (
     <div className="min-h-screen pt-16">
+      <Navigation/>
       {/* Hero Section */}
       <section className="py-20 bg-background text-center">
         <div className="container mx-auto px-4">
@@ -124,6 +128,7 @@ export default function Treatments() {
           </button>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

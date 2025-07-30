@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 export default function About() {
   return (
-    <div className="bg-black text-gray-200 font-sans">
+    <div className="bg-background text-gray-200 font-sans">
       
       {/* PlaceholderPage at the top */}
       <PlaceholderPage
