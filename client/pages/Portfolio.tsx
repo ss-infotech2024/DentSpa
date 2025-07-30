@@ -5,7 +5,7 @@ import PortfolioGrid from "../components/PortfolioGrid";
 
 export default function Portfolio() {
   return (
-    <div className="flex flex-col min-h-screen bg-black">
+    <div className="flex flex-col min-h-screen bg-background">
       {/* Page header / title */}
       <PlaceholderPage
         title="Portfolio"
