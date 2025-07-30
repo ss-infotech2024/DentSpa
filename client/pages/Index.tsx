@@ -4,6 +4,8 @@ import SmileTransformations from "../components/SmileTransformations";
 import Footer from "../components/Footer";
 import bgImage from "../assets/image.png";
 import HeroSection from "../components/HeroSection";
+import InstituteSection from "../components/InstituteSection";
+import FeaturedLogos from "../components/FeaturedLogos";
 
 export default function Index() {
   return (
@@ -12,6 +14,8 @@ export default function Index() {
       <HeroSection/>
       <LogosDisplay />
       <SmileTransformations />
+      <InstituteSection/>
+      <FeaturedLogos/>
       <Footer />
      
     </div>

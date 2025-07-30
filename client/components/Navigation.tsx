@@ -11,10 +11,10 @@ export function Navigation({ className }: NavigationProps) {
     { name: "ABOUT ME", path: "/about" },
     { name: "TREATMENTS", path: "/treatments" },
     { name: "PORTFOLIO", path: "/portfolio", hasDropdown: true },
-    { name: "ALUMNI BALL & AWARDS", path: "/alumni" },
+    // { name: "ALUMNI BALL & AWARDS", path: "/alumni" },
     { name: "COURSES", path: "/courses", hasDropdown: true },
-    { name: "E-STORE", path: "/store" },
-    { name: "PRESS", path: "/press" },
+    // { name: "E-STORE", path: "/store" },
+    // { name: "PRESS", path: "/press" },
   ];
 
   return (
