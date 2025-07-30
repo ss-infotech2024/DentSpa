@@ -18,16 +18,16 @@ export function Navigation({ className }: NavigationProps) {
   ];
 
   return (
-    <nav className={cn("w-full px-4 md:px-8 py-6", className)}>
-      {/* Desktop Navigation */}
-      <div className="hidden lg:flex items-center justify-between">
+    <nav className={cn("w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6", className)}>
+      {/* Desktop & tablet navigation */}
+      <div className="hidden md:flex items-center justify-between">
         {/* Left side navigation */}
-        <div className="flex items-center space-x-6 xl:space-x-8">
+        <div className="flex items-center space-x-4 md:space-x-5 lg:space-x-6 xl:space-x-8">
           {navItems.slice(0, 3).map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className="text-gold text-sm font-medium tracking-wide hover:text-gold-light transition-colors duration-200"
+              className="text-gold text-xs md:text-sm font-medium tracking-wide hover:text-gold-light transition-colors duration-200"
             >
               {item.name}
             </Link>
@@ -36,24 +36,24 @@ export function Navigation({ className }: NavigationProps) {
 
         {/* Center logo */}
         <div className="flex flex-col items-center">
-          <div className="text-gold text-4xl font-thin mb-1">MV</div>
-          <div className="text-gold text-xs tracking-[0.2em] font-light">
+          <div className="text-gold text-3xl md:text-4xl font-thin mb-1">MV</div>
+          <div className="text-gold text-[10px] md:text-xs tracking-[0.2em] font-light">
             DR MONIK VASANT
           </div>
         </div>
 
         {/* Right side navigation */}
-        <div className="flex items-center space-x-6 xl:space-x-8">
+        <div className="flex items-center space-x-4 md:space-x-5 lg:space-x-6 xl:space-x-8">
           {navItems.slice(3).map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className="text-gold text-sm font-medium tracking-wide hover:text-gold-light transition-colors duration-200 flex items-center"
+              className="text-gold text-xs md:text-sm font-medium tracking-wide hover:text-gold-light transition-colors duration-200 flex items-center"
             >
               {item.name}
               {item.hasDropdown && (
                 <svg
-                  className="ml-1 w-3 h-3"
+                  className="ml-1 w-2.5 md:w-3 h-2.5 md:h-3"
                   fill="currentColor"
                   viewBox="0 0 12 12"
                 >
@@ -65,23 +65,23 @@ export function Navigation({ className }: NavigationProps) {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <div className="lg:hidden">
+      {/* Mobile navigation (smaller than md) */}
+      <div className="md:hidden">
         {/* Center logo */}
-        <div className="flex flex-col items-center mb-6">
-          <div className="text-gold text-3xl font-thin mb-1">MV</div>
-          <div className="text-gold text-xs tracking-[0.2em] font-light">
+        <div className="flex flex-col items-center mb-4">
+          <div className="text-gold text-2xl font-thin mb-1">MV</div>
+          <div className="text-gold text-[10px] tracking-[0.2em] font-light">
             DR MONIK VASANT
           </div>
         </div>
 
         {/* Mobile menu items */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
           {navItems.map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className="text-gold text-xs font-medium tracking-wide hover:text-gold-light transition-colors duration-200 text-center py-2"
+              className="text-gold text-[10px] xs:text-xs font-medium tracking-wide hover:text-gold-light transition-colors duration-200 text-center py-2"
             >
               {item.name}
             </Link>
