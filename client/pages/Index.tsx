@@ -1,8 +1,10 @@
 import { Navigation } from "@/components/Navigation";
-
+import LogosDisplay from "../components/LogosDisplay";
+import SmileTransformations from "../components/SmileTransformations";
+import Footer from "../components/Footer";
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground ">
       <Navigation />
 
       <main className="flex flex-col lg:flex-row items-center min-h-[calc(100vh-200px)] lg:min-h-[calc(100vh-120px)] px-4 md:px-8 py-8 lg:py-0">
@@ -46,7 +48,14 @@ export default function Index() {
             <p>smile but preserving the health of the tooth comes first."</p>
           </blockquote>
         </div>
+       
+
       </main>
+      
+          <LogosDisplay />
+      <SmileTransformations />
+      <Footer/>
+       
     </div>
   );
 }
