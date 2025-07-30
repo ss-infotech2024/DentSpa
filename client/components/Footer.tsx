@@ -6,7 +6,7 @@ const Footer = () => {
     <div
       className="relative bg-background text-white py-10"
       style={{
-        backgroundImage: `url('/71460ae0-74b1-428d-be29-7182010435d8.png')`,
+        backgroundImage: `url('https://monikvasant.co.uk/wp-content/themes/monikvasant/images/footer-bg1.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
