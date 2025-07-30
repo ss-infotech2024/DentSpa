@@ -38,7 +38,7 @@ export function Navigation({ className }: NavigationProps) {
         <div className="flex flex-col items-center">
           <div className="text-gold text-3xl md:text-4xl font-thin mb-1">MV</div>
           <div className="text-gold text-[10px] md:text-xs tracking-[0.2em] font-light">
-            DR MONIK VASANT
+           DR DEBASHREE CHANDAK
           </div>
         </div>
 
@@ -71,7 +71,7 @@ export function Navigation({ className }: NavigationProps) {
         <div className="flex flex-col items-center mb-4">
           <div className="text-gold text-2xl font-thin mb-1">MV</div>
           <div className="text-gold text-[10px] tracking-[0.2em] font-light">
-            DR MONIK VASANT
+           DR DEBASHREE CHANDAK
           </div>
         </div>
 
