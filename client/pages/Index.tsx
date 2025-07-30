@@ -6,18 +6,21 @@ import bgImage from "../assets/image.png";
 import HeroSection from "../components/HeroSection";
 import InstituteSection from "../components/InstituteSection";
 import FeaturedLogos from "../components/FeaturedLogos";
+import PatientDentistSection from "@/components/PatientDentistSection";
 
 export default function Index() {
-  return (
-    <div className="flex flex-col min-h-screen">
+  return (<>
       <Navigation />
+    <div className="flex flex-col min-h-screen bg-black">
       <HeroSection/>
-      <LogosDisplay />
+      {/* <LogosDisplay /> */}
+      <FeaturedLogos/>
       <SmileTransformations />
       <InstituteSection/>
-      <FeaturedLogos/>
+      <PatientDentistSection/>
       <Footer />
      
     </div>
+    </>
   );
 }
