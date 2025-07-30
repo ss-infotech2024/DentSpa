@@ -1,62 +1,41 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { Navigation } from "@/components/Navigation";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
+      
+      <main className="flex items-center min-h-[calc(100vh-120px)] px-8">
+        {/* Left side - Professional image */}
+        <div className="flex-1 flex justify-start">
+          <div className="w-96 h-[500px] bg-gradient-to-b from-muted/20 to-muted/5 rounded-lg overflow-hidden">
+            <img
+              src="/placeholder.svg"
+              alt="Dr. Monik Vasant"
+              className="w-full h-full object-cover"
             />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+          </div>
+        </div>
+
+        {/* Right side - Quote and philosophy */}
+        <div className="flex-1 pl-16 max-w-2xl">
+          <blockquote className="text-foreground text-lg leading-relaxed">
+            <p className="mb-6">
+              "Dentistry is not just work for me, it is my passion. I practice all
+              aspects of dentistry in my clinics but my work is based around the
+            </p>
+            <p className="mb-6">
+              philosophy of minimally invasive aesthetic dentistry. This belief system
+            </p>
+            <p className="mb-6">
+              means that we recognise the importance of having a beautiful natural
+            </p>
+            <p>
+              smile but preserving the health of the tooth comes first."
+            </p>
+          </blockquote>
+        </div>
+      </main>
     </div>
   );
 }
