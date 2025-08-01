@@ -19,7 +19,7 @@ const PatientDentistSection: React.FC = () => {
       {blocks.map((block, index) => (
         <div
           key={index}
-          className="relative group h-[400px] w-full overflow-hidden rounded-md shadow-md cursor-pointer"
+          className="relative group h-[400px] w-full overflow-hidden border border-white  shadow-md cursor-pointer"
         >
           <img
             src={block.img}

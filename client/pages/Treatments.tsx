@@ -2,7 +2,8 @@ import Footer from "../components/Footer";
 import { Navigation } from "../components/Navigation";
 import React from "react";
 import { Navigate } from "react-router-dom";
-
+import PatientDentistSection from "../components/PatientDentistSection";
+import InstituteSection from "../components/InstituteSection";
 export default function Treatments() {
   const treatments = [
     {
@@ -128,6 +129,7 @@ export default function Treatments() {
           </button>
         </div>
       </section>
+   
       <Footer/>
     </div>
   );
