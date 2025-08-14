@@ -2,7 +2,9 @@ import Footer from "../components/Footer";
 import { Navigation } from "../components/Navigation";
 import React from "react";
 import { Navigate } from "react-router-dom";
-
+import PatientDentistSection from "../components/PatientDentistSection";
+import InstituteSection from "../components/InstituteSection";
+import FeaturedLogos from "@/components/FeaturedLogos";
 export default function Treatments() {
   const treatments = [
     {
@@ -87,47 +89,48 @@ export default function Treatments() {
       </section>
 
       {/* Treatments Grid */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {treatments.map((treatment, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="relative overflow-hidden mb-4">
-                  <img
-                    src={treatment.image}
-                    alt={treatment.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <h3 className="text-white text-xl font-semibold text-center px-4">
-                      {treatment.title}
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {treatment.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+       <section className="max-w-7xl mx-auto px-4 py-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#C8A97E]">
+        Our Treatments
+      </h2>
 
-      {/* Contact CTA */}
-      <section className="py-16 bg-background text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-light text-primary mb-8">
-            Ready to Transform Your Smile?
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Book a consultation with Dr. Monik Vasant to discuss which
-            treatment is right for you.
-          </p>
-          <button className="border border-primary text-primary px-8 py-3 hover:bg-primary hover:text-background transition-all duration-300">
-            Book Consultation
-          </button>
-        </div>
-      </section>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {treatments.map((treatment, index) => (
+  <div
+  key={index}
+  className="group relative cursor-pointer overflow-hidden border border-white  shadow-lg transition-all duration-500 hover:border-[#C8A97E]"
+>
+  {/* Image */}
+  <img
+    src={treatment.image}
+    alt={treatment.title}
+    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+  {/* Title */}
+  <div className="absolute inset-0 flex items-center justify-center px-4">
+    <h3 className="text-white group-hover:text-[#C8A97E] text-xl font-semibold text-center tracking-wide transition-colors duration-300">
+      {treatment.title}
+    </h3>
+  </div>
+
+  {/* Description */}
+  {/* <div className="bg-white p-4 transition-colors duration-300 group-hover:text-[#C8A97E]">
+    <p className="text-sm text-gray-700 group-hover:text-[#C8A97E] leading-relaxed transition-colors duration-300">
+      {treatment.description}
+    </p>
+  </div> */}
+</div>
+
+        ))}
+      </div>
+    </section>
+
+      <FeaturedLogos/>
+   
       <Footer/>
     </div>
   );

@@ -14,7 +14,7 @@ export default function Index() {
     <div className="flex flex-col min-h-screen bg-black">
       <HeroSection/>
       {/* <LogosDisplay /> */}
-      <FeaturedLogos/>
+      <div className="p-10"><FeaturedLogos/></div>
       <SmileTransformations />
       <InstituteSection/>
       <PatientDentistSection/>
