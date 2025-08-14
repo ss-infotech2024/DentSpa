@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import logo from "../assets/logo.png";
 
 interface NavigationProps {
   className?: string;
@@ -25,11 +26,7 @@ export function Navigation({ className }: NavigationProps) {
   // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -61,10 +58,11 @@ export function Navigation({ className }: NavigationProps) {
 
         {/* Center Logo */}
         <div className="flex flex-col items-center">
-          <div className="text-gold text-3xl md:text-4xl font-thin mb-1">DC</div>
-          <div className="text-gold text-[10px] md:text-xs tracking-[0.2em] font-light">
-            DR DEBASHREE CHANDAK
-          </div>
+          <img
+            src={logo}
+            alt="Dr. Debashree Chandak Logo"
+            className="h-24 md:h-28 object-contain" // Increased height
+          />
         </div>
 
         {/* Right Nav */}
@@ -94,11 +92,8 @@ export function Navigation({ className }: NavigationProps) {
       <div className="md:hidden">
         {/* Top Row: Logo + Hamburger */}
         <div className="flex items-center justify-between mb-4">
-          <div className="flex flex-col items-start">
-            <div className="text-gold text-2xl font-thin mb-1">DC</div>
-            <div className="text-gold text-[10px] tracking-[0.2em] font-light">
-              DR DEBASHREE CHANDAK
-            </div>
+          <div className="flex items-center">
+            <img src={logo} alt="Logo" className="h-10 object-contain" />
           </div>
           <button
             onClick={toggleMobileMenu}
