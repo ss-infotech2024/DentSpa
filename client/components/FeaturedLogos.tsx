@@ -12,7 +12,7 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];
 
 const FeaturedLogos: React.FC = () => {
   return (
-    <section className="bg-black py-6 overflow-hidden">
+    <section className="bg-black py-6 overflow-hidden mx-[340px]">
       <div className="relative w-full max-w-7xl mx-auto px-4">
         <div className="flex animate-slide whitespace-nowrap">
           {logos.map((logo, idx) => (
