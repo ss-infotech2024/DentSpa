@@ -32,8 +32,8 @@ export default function Treatments() {
     {
       title: "Simple Tooth Extraction",
       description: "Painless and efficient tooth extraction services for optimal oral health.",
-      image: "https://www.dentaleh.com/wp-content/uploads/2020/04/Tooth-Extraction.jpg",
-      link: "https://docs.google.com/document/d/14512W3e3_TingKZcUF5kMO_uYYQY-QytuelF7OfuD4U/edit?usp=sharing",
+      image: "https://tse2.mm.bing.net/th/id/OIP.bAHOFwjBoQVe182E6MdVVAHaE7?pid=Api&P=0&h=180",
+      link: "https://tse2.mm.bing.net/th/id/OIP.bAHOFwjBoQVe182E6MdVVAHaE7?pid=Api&P=0&h=180",
     },
     {
       title: "Bleaching (Yellow Teeth Management)",
@@ -50,19 +50,19 @@ export default function Treatments() {
     {
       title: "Ceramic/Porcelain Veneers",
       description: "Enhance your smile with durable, natural-looking porcelain veneers.",
-      image: "https://ballantynedentistry.com/wp-content/uploads/2020/03/Porcelain-Veneers.jpg",
+      image: "https://www.drmarkhughes.co.uk/wp-content/uploads/2020/10/veneers-b-a-1.jpg",
       link: "https://ballantynedentistry.com/porcelain-veneers/",
     },
     {
       title: "Composite Veneers",
       description: "Affordable composite veneers for a flawless smile.",
-      image: "https://www.dentaleh.com/wp-content/uploads/2020/04/Composite-Veneers.jpg",
+      image: "https://tse2.mm.bing.net/th/id/OIP.14K3r80F20ONBpnvlsf6nAHaEK?pid=Api&P=0&h=180",
       link: "https://docs.google.com/document/d/1vbzVJ-GJSYklSu1JlDXC3xUUz-QvnKhBUlqFMoAv9HQ/edit?usp=sharing",
     },
     {
       title: "Fracture Teeth Repair",
       description: "Expert repair of fractured or broken teeth for restored function and aesthetics.",
-      image: "https://www.dentaleh.com/wp-content/uploads/2020/04/Broken-Tooth-Repair.jpg",
+      image: "https://tse3.mm.bing.net/th/id/OIP.ESAC_LdLfrDw17lr_VkC3gHaEc?pid=Api&P=0&h=180",
       link: "https://docs.google.com/document/d/1FVyZq8HMc8Gv-SMc3E7kZKDYKk4FgjEey_FM4gk8Mgo/edit?usp=sharing",
     },
     {
