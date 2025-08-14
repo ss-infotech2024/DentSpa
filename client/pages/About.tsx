@@ -1,28 +1,41 @@
 import React from "react";
-import {PlaceholderPage} from "@/components/PlaceholderPage"; // update the path if needed
+import { PlaceholderPage } from "@/components/PlaceholderPage"; // update the path if needed
 import FeaturedLogos from "../components/FeaturedLogos";
 import Footer from "../components/Footer";
 
 export default function About() {
   return (
+
+    
     <div className="bg-background text-gray-200 font-sans">
-      
+
       {/* PlaceholderPage at the top */}
       <PlaceholderPage
-       title="About Dr. Monik Vasant"
-      description="Learn more about Dr. Vasant's background, qualifications, and approach to dentistry."
+        title="About Dr. Monik Vasant"
+        description="Learn more about Dr. Vasant's background, qualifications, and approach to dentistry."
       />
 
-      {/* Header */}
-      <header className="text-center py-12">
-        <h1 className="text-2xl font-semibold tracking-widest uppercase text-white">About Me</h1>
-        <div className="mt-4 inline-block border border-gray-600 px-4 py-1">
-          <span className="text-xs text-yellow-500 tracking-widest">HOME / ABOUT ME</span>
-        </div>
-        <div className="mt-4 border-t border-gray-700 min-w-full mx-auto"></div>
-      </header>
+       <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-light text-primary mb-8 text-center pt-32">
+            About Us
+          </h1>
+          <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
+          </div>
 
       {/* Bio Section */}
+      <section className="max-w-4xl mx-auto text-center px-4 mb-16 ">
+  
+
+        <p className="mb-4 leading-relaxed">
+          Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
+        </p>
+        <p className="mb-4 leading-relaxed">
+          His passion for aesthetic and minimally invasive dentistry has led him to be recognised globally...
+        </p>
+        <p className="mb-4 leading-relaxed">
+          Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
+        </p>
+      </section>
       <section className="max-w-4xl mx-auto text-center px-4 mb-16">
         <p className="mb-4 leading-relaxed">
           Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
@@ -34,7 +47,7 @@ export default function About() {
           Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
         </p>
       </section>
-       <section className="max-w-4xl mx-auto text-center px-4 mb-16">
+      <section className="max-w-4xl mx-auto text-center px-4 mb-16">
         <p className="mb-4 leading-relaxed">
           Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
         </p>
@@ -45,7 +58,7 @@ export default function About() {
           Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
         </p>
       </section>
-       <section className="max-w-4xl mx-auto text-center px-4 mb-16">
+      <section className="max-w-4xl mx-auto text-center px-4 mb-16">
         <p className="mb-4 leading-relaxed">
           Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
         </p>
@@ -56,18 +69,7 @@ export default function About() {
           Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
         </p>
       </section>
-       <section className="max-w-4xl mx-auto text-center px-4 mb-16">
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          His passion for aesthetic and minimally invasive dentistry has led him to be recognised globally...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
-        </p>
-      </section>
-       <section className="max-w-4xl mx-auto text-center px-4 mb-16">
+      <section className="max-w-4xl mx-auto text-center px-4 mb-16">
         <p className="mb-4 leading-relaxed">
           Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
         </p>
@@ -141,8 +143,8 @@ export default function About() {
           </div>
         </div>
       </section> */}
-      <FeaturedLogos/>
-      <Footer/>
+      <FeaturedLogos />
+      <Footer />
     </div>
   );
 }

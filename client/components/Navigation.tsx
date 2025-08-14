@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -8,6 +8,7 @@ interface NavigationProps {
 
 export function Navigation({ className }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
     { name: "HOME", path: "/" },
@@ -21,9 +22,28 @@ export function Navigation({ className }: NavigationProps) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Scroll listener
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className={cn("w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6", className)}>
-      
+    <nav
+      className={cn(
+        "transparentToBlack Serif w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 fixed top-0 left-0 z-50 transition-colors duration-500",
+        isScrolled ? "bg-[hsl(var(--background))] shadow-lg" : "bg-transparent",
+        className
+      )}
+    >
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-between">
         {/* Left Nav */}
@@ -32,7 +52,7 @@ export function Navigation({ className }: NavigationProps) {
             <Link
               key={item.name}
               to={item.path}
-              className="text-gold text-xs md:text-sm font-medium tracking-wide hover:text-gold-light transition"
+              className="text-gold text-xs md:text-sm font-medium tracking-wide hover:text-gold-light transition pt10"
             >
               {item.name}
             </Link>
@@ -80,16 +100,39 @@ export function Navigation({ className }: NavigationProps) {
               DR DEBASHREE CHANDAK
             </div>
           </div>
-          <button onClick={toggleMobileMenu} className="text-gold focus:outline-none">
+          <button
+            onClick={toggleMobileMenu}
+            className="text-gold focus:outline-none"
+          >
             {isMobileMenuOpen ? (
               // Close icon
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
               // Hamburger icon
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>
