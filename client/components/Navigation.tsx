@@ -37,13 +37,16 @@ export function Navigation({ className }: NavigationProps) {
   }, []);
 
   return (
-    <nav
-      className={cn(
-        "transparentToBlack Serif w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 fixed top-0 left-0 z-50 transition-colors duration-500",
-        isScrolled ? "bg-[hsl(var(--background))] shadow-lg" : "bg-transparent",
-        className
-      )}
-    >
+   <nav
+  className={cn(
+    "transparentToBlack Serif w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 fixed top-0 left-0 z-50 transition-colors duration-500",
+    isScrolled
+      ? "bg-[rgba(0,0,0,0.7)] shadow-lg" // Scrolled → semi-transparent black
+      : "bg-[rgba(0,0,0,0.3)]", // Not scrolled → lighter transparency
+    className
+  )}
+>
+
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-between">
         {/* Left Nav */}
