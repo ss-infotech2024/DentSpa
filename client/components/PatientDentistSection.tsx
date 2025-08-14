@@ -19,7 +19,7 @@ const PatientDentistSection: React.FC = () => {
       {blocks.map((block, index) => (
         <div
           key={index}
-          className="relative group h-[400px] w-full overflow-hidden rounded-md shadow-md cursor-pointer"
+          className="relative group h-[400px] w-full overflow-hidden border border-white  shadow-md cursor-pointer"
         >
           <img
             src={block.img}
@@ -28,7 +28,7 @@ const PatientDentistSection: React.FC = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#C8A97E66] via-transparent to-[#C8A97E33] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-white text-lg font-semibold tracking-widest">
+            <span className="text-white text-xl font-semibold tracking-widest">
               {block.title}
             </span>
           </div>

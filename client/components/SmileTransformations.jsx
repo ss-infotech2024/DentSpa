@@ -84,10 +84,10 @@ const patients = [img1, img2, img3, img4, img5, img6, img7, img8];
 const SmileTransformations = () => {
   return (
     <div className="bg-black py-10 px-4">
-      <h2 className="text-white text-center text-xl md:text-3xl font-semibold mb-10 tracking-wide">
+      <h2 className="text-white text-center text-xl md:text-3xl font-semibold mb-10 tracking-wide p-10">
         SMILE TRANSFORMATIONS
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-12 gap-4 max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 xl:grid-cols-12  gap-4   max-w-7xl mx-auto">
         {patients.map((img, index) => (
           <div key={index} className="overflow-hidden rounded-md">
             <img

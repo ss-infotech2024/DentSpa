@@ -1,49 +1,29 @@
 import React, { useState } from "react";
-
-// Filters
-const filters = [
-  "ALL",
-  "GUM LIFT",
-  "TEETH WHITENING",
-  "COMPOSITE BONDING",
-  "INVISALIGN®",
-  "PORCELAIN VENEERS",
-  "DENTAL IMPLANTS",
-  "CROWNS / BRIDGES",
-];
-
-// Images
-import logo1 from "../assets/1.jpg";
-import logo2 from "../assets/3.jpg";  
-import logo3 from "../assets/2.jpg";
-import logo4 from "../assets/5.jpg";
-import logo5 from "../assets/7.jpg";
-import logo6 from "../assets/11.jpg";
-
-// Replace with real filtered images if needed
-const images = [logo1, logo2, logo3, logo4, logo5, logo6];
+import { filters, portfolioData } from "./data/data"; // Make sure the path is correct
 
 const PortfolioGrid: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("ALL");
+
+  const images = portfolioData[activeFilter] || [];
 
   return (
     <section className="bg-background py-10 px-4 md:px-8">
       {/* Breadcrumb */}
       <div className="text-center mb-6">
         <span className="text-gold text-sm font-light">
-          HOME / PORTFOLIO / {activeFilter.replace("®", "")}
+          HOME / {activeFilter.replace("®", "")}
         </span>
       </div>
 
       {/* Filters */}
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 p-10">
         {filters.map((filter) => (
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`border border-gold px-3 py-1 text-xs md:text-sm text-gold tracking-wide
-              transition-colors duration-200 hover:bg-gold hover:text-black
-              ${activeFilter === filter ? "bg-gold text-black" : "bg-transparent"}`}
+            className={`border border-white px-3 py-1 text-xs md:text-sm text-[#d1b571] tracking-wide
+              transition-colors duration-200 hover:text-black hover:bg-[#d1b571]
+              ${activeFilter === filter ? "" : "bg-transparent"}`}
           >
             {filter}
           </button>
@@ -55,14 +35,14 @@ const PortfolioGrid: React.FC = () => {
         {images.map((src, idx) => (
           <div
             key={idx}
-            className="relative group w-full aspect-square overflow-hidden rounded-lg shadow-md"
+            className="relative group w-full aspect-square overflow-hidden border border-white shadow-md cursor-pointer"
           >
             <img
               src={src}
               alt={`Smile ${idx + 1}`}
-              className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#C8A97E66] via-transparent to-[#C8A97E33] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         ))}
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import {PlaceholderPage} from "@/components/PlaceholderPage"; // update the path if needed
 import FeaturedLogos from "../components/FeaturedLogos";
 import Footer from "../components/Footer";
-
+import PatientDentistSection from "../components/PatientDentistSection";
 export default function About() {
   return (
     <div className="bg-background text-gray-200 font-sans">
@@ -142,6 +142,8 @@ export default function About() {
         </div>
       </section> */}
       <FeaturedLogos/>
+      <div className="w-full bg-black"> <PatientDentistSection/></div>
+     
       <Footer/>
     </div>
   );

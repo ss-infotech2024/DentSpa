@@ -15,7 +15,7 @@ const Footer = () => {
 
       <div className="relative z-10 flex flex-col items-center text-center px-4">
         <FaInstagram size={32} className="text-pink-500 mb-2" />
-        <p className="text-sm tracking-wider mb-4">@DRMONIK</p>
+        <p className="text-sm tracking-wider mb-4">@DR DEBASHREE CHANDAK</p>
         <a
           href="https://www.instagram.com"
           target="_blank"
@@ -47,7 +47,7 @@ const Footer = () => {
           <a href="#">Cookie Settings</a>
         </div>
 
-        <div className="mt-6 text-4xl font-light tracking-widest text-yellow-500">MV</div>
+        <div className="mt-6 text-4xl font-light tracking-widest text-yellow-500">DC</div>
       </div>
     </div>
   );
