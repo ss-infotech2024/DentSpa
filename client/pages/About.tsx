@@ -27,7 +27,7 @@ export default function About() {
               alt="Dr. Debashree Chandak"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#C8A97E66] via-transparent to-[#C8A97E33] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(125,115,115,0.04)] via-transparent to-[#C8A97E33] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
           </div>
         </div>
 
