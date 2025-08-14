@@ -1,91 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
-import { PlaceholderPage } from "@/components/PlaceholderPage"; // update the path if needed
-=======
 import { PlaceholderPage } from "@/components/PlaceholderPage";
->>>>>>> b08db28f973beb949d0d9ab1849f13acccc437e6
 import FeaturedLogos from "../components/FeaturedLogos";
 import Footer from "../components/Footer";
 import PatientDentistSection from "../components/PatientDentistSection";
 
 export default function About() {
   return (
-<<<<<<< HEAD
-
-    
-    <div className="bg-background text-gray-200 font-sans">
-
-      {/* PlaceholderPage at the top */}
-      <PlaceholderPage
-        title="About Dr. Monik Vasant"
-        description="Learn more about Dr. Vasant's background, qualifications, and approach to dentistry."
-      />
-
-       <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-light text-primary mb-8 text-center pt-32">
-            About Us
-          </h1>
-          <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
-          </div>
-
-      {/* Bio Section */}
-      <section className="max-w-4xl mx-auto text-center px-4 mb-16 ">
-  
-
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          His passion for aesthetic and minimally invasive dentistry has led him to be recognised globally...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
-        </p>
-      </section>
-      <section className="max-w-4xl mx-auto text-center px-4 mb-16">
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          His passion for aesthetic and minimally invasive dentistry has led him to be recognised globally...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
-        </p>
-      </section>
-      <section className="max-w-4xl mx-auto text-center px-4 mb-16">
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          His passion for aesthetic and minimally invasive dentistry has led him to be recognised globally...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
-        </p>
-      </section>
-      <section className="max-w-4xl mx-auto text-center px-4 mb-16">
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          His passion for aesthetic and minimally invasive dentistry has led him to be recognised globally...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
-        </p>
-      </section>
-      <section className="max-w-4xl mx-auto text-center px-4 mb-16">
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik is a highly experienced clinician who is qualified from a leading medical university...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          His passion for aesthetic and minimally invasive dentistry has led him to be recognised globally...
-        </p>
-        <p className="mb-4 leading-relaxed">
-          Dr. Monik teaches internationally, runs courses in composite artistry, and mentors young dentists...
-        </p>
-=======
     <div className="bg-black text-muted-foreground font-sans">
       <PlaceholderPage
         title="About Dr. Debashree Chandak"
@@ -132,7 +52,6 @@ export default function About() {
             detail, creating smiles that look beautiful and feel completely natural.
           </p>
         </div>
->>>>>>> b08db28f973beb949d0d9ab1849f13acccc437e6
       </section>
 
       {/* Professional Journey Section */}
@@ -264,24 +183,6 @@ export default function About() {
             - Dr. Debashree Chandak
           </p>
         </div>
-<<<<<<< HEAD
-        <div className="relative group overflow-hidden">
-          <img src="/images/featured2.jpg" alt="For Dentists" className="w-full h-64 object-cover opacity-80 group-hover:opacity-100 transition" />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <span className="text-white uppercase tracking-widest">For Dentists</span>
-          </div>
-        </div>
-      </section> */}
-<<<<<<< HEAD
-      <FeaturedLogos />
-      <Footer />
-=======
-      <FeaturedLogos/>
-      <div className="w-full bg-black"> <PatientDentistSection/></div>
-     
-      <Footer/>
->>>>>>> 10b0232938e2d771cc789c7fcf58f1c191a50f59
-=======
       </section>
 
       <FeaturedLogos />
@@ -289,7 +190,6 @@ export default function About() {
         <PatientDentistSection />
       </div>
       <Footer />
->>>>>>> b08db28f973beb949d0d9ab1849f13acccc437e6
     </div>
   );
 }
