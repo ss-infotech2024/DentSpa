@@ -23,7 +23,7 @@ const PortfolioGrid: React.FC = () => {
             onClick={() => setActiveFilter(filter)}
             className={`border border-white px-3 py-1 text-xs md:text-sm text-[#d1b571] tracking-wide
               transition-colors duration-200 hover:text-black hover:bg-[#d1b571]
-              ${activeFilter === filter ? " text-black" : "bg-transparent"}`}
+              ${activeFilter === filter ? "" : "bg-transparent"}`}
           >
             {filter}
           </button>
