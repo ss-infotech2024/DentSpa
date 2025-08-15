@@ -126,7 +126,7 @@ export function Navigation({ className }: NavigationProps) {
 
       {/* Mobile Menu Items */}
       {isMobileMenuOpen && (
-        <div className="md:hidden mt-2 bg-black p-3 rounded-lg max-w-7xl mx-auto overflow-x-auto">
+        <div className="md:hidden mt-2 bg-black p-3 rounded-lg max-w-7xl mx-auto overflow-x-auto scrollbar-hidden">
           <div className="flex flex-row space-x-4 whitespace-nowrap">
             {navItems.map((item) => (
               <Link
@@ -141,6 +141,15 @@ export function Navigation({ className }: NavigationProps) {
           </div>
         </div>
       )}
+      <style>
+        {`.scrollbar-hidden::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hidden {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+        }`}
+      </style>
     </nav>
   );
 }
