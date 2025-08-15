@@ -1,50 +1,57 @@
 import React from "react";
-
 import doctorImg from "../assets/doctorbg.jpg";
-// import doctorImgMobile from "../assets/ds2.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 overflow-hidden">
-      {/* Full Background Image (Switch based on screen size) */}
-      <picture>
-        {/* Mobile & Tablet Image */}
+    <section className="relative w-full min-h-screen flex items-end px-4 sm:px-6 overflow-hidden">
+      {/* Background Image */}
+      <picture className="absolute inset-0">
         <source srcSet="/ds2.png" media="(max-width: 1024px)" />
-        {/* Desktop Image */}
         <img
           src={doctorImg}
           alt="Doctor Background"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="w-full h-full object-cover"
         />
       </picture>
 
-      {/* Overlay for better text contrast */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
 
-      {/* Content */}
-      <div className="relative max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Left Side Empty for Desktop */}
-        <div className="hidden md:block"></div>
-
-        {/* Right Side Text */}
-        <div className="text-white font-dancing text-center md:text-left px-2 sm:px-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+      {/* Text Content */}
+      <div className="relative max-w-7xl w-full flex justify-center sm:justify-end pb-6 sm:pb-8 md:pb-10 lg:pb-12 animate-slideInRight">
+        <div className="bg-black/60 lg:bg-transparent p-4 sm:p-6 md:p-8 rounded-lg w-full sm:w-1/2 lg:w-5/12 xl:w-1/2 lg:mr-12 text-white font-dancing text-center sm:text-right px-2 sm:px-4 md:px-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
             Your Health, Our Priority
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 text-gray-300 py-3 sm:py-5">
-            "Dentistry is not just work for me, it is my passion. I practice all
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-6 text-gray-300 py-2 sm:py-3 md:py-4">
+            Dentistry is not just work for me, it is my passion. I practice all
             aspects of dentistry in my clinics but my work is based around the
             philosophy of minimally invasive aesthetic dentistry. This belief
             system means that we recognise the importance of having a beautiful,
-            natural smile."
+            natural smile.
           </p>
-          <p className="text-[#c5a253] italic font-signature text-lg sm:text-xl md:text-2xl underline-offset-4">
+          <p className="text-[#c5a253] italic font-signature text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl underline-offset-4">
             Dr Debashree Chandak
           </p>
         </div>
       </div>
+
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        .animate-slideInRight {
+          animation: slideInRight 1s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 }
-
-
