@@ -156,22 +156,22 @@ export default function Treatments() {
     <div className="min-h-screen pt-16" style={{ backgroundColor: "#070707" }}>
       <style>
         {`
-          @keyframes ssinfotechSlideUp {
+          @keyframes ssinfotechFastSlideUp {
             from {
               opacity: 0;
-              transform: translateY(60px) scale(0.92);
+              transform: translateY(50px) scale(0.95);
             }
             to {
               opacity: 1;
               transform: translateY(0) scale(1);
             }
           }
-          .animate-ssinfotechSlideUp {
-            animation: ssinfotechSlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          .animate-ssinfotechFastSlideUp {
+            animation: ssinfotechFastSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
           }
-          .group:hover .animate-ssinfotechSlideUp {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(200, 169, 126, 0.3);
+          .group:hover .animate-ssinfotechFastSlideUp {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(200, 169, 126, 0.25);
           }
         `}
       </style>
@@ -215,20 +215,20 @@ export default function Treatments() {
               {({ inView, ref }) => (
                 <div
                   ref={ref}
-                  className={`group relative cursor-pointer overflow-hidden border border-white rounded-lg shadow-lg transition-all duration-500 hover:border-[#C8A97E] ${
-                    inView ? "animate-ssinfotechSlideUp" : "opacity-0"
+                  className={`group relative cursor-pointer overflow-hidden border border-white rounded-lg shadow-lg transition-all duration-300 hover:border-[#C8A97E] ${
+                    inView ? "animate-ssinfotechFastSlideUp" : "opacity-0"
                   } ${!treatment.link ? "cursor-default" : ""}`}
-                  style={{ animationDelay: `${index * 0.25}s` }}
+                  style={{ animationDelay: `${index * 0.15}s` }}
                   onClick={() => handleCardClick(treatment.link)}
                 >
                   {/* Image */}
                   <img
                     src={treatment.image}
                     alt={treatment.title}
-                    className="w-full h-48 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-103"
                   />
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
                   {/* Title and Description */}
                   <div className="absolute inset-0 flex flex-col items-center justify-end p-2 sm:p-4">
                     <div className="bg-black/50 w-full text-center py-2 rounded">
