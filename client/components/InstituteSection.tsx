@@ -22,36 +22,35 @@ const InstituteSection = () => {
           </div>
 
           <div className="highlights">
-            <div className="highlight-card">
-              <span className="star">★</span>
-              <strong>EXPERT DENTAL CARE</strong>
-              <p>COMPREHENSIVE TREATMENTS</p>
-              <div className="highlight-details">
-                Offering world-class dental solutions with advanced technology and personalized care.
+            {[
+              {
+                title: "EXPERT DENTAL CARE",
+                subtitle: "COMPREHENSIVE TREATMENTS",
+                details: "Offering world-class dental solutions with advanced technology and personalized care.",
+              },
+              {
+                title: "AESTHETIC & COSMETIC DENTISTRY",
+                subtitle: "SMILE MAKEOVER SPECIALIST",
+                details: "Transforming smiles with precision, artistry, and modern techniques.",
+              },
+              {
+                title: "ADVANCED FACILITIES",
+                subtitle: "STATE-OF-THE-ART CLINIC",
+                details: "Equipped with the latest dental equipment for comfortable and effective treatments.",
+              },
+            ].map((highlight, index) => (
+              <div key={index} className="highlight-card" style={{ "--index": index } as React.CSSProperties}>
+                <span className="star">★</span>
+                <strong>{highlight.title}</strong>
+                <p>{highlight.subtitle}</p>
+                <div className="highlight-details">{highlight.details}</div>
               </div>
-            </div>
-
-            <div className="highlight-card">
-              <span className="star">★</span>
-              <strong>AESTHETIC & COSMETIC DENTISTRY</strong>
-              <p>SMILE MAKEOVER SPECIALIST</p>
-              <div className="highlight-details">
-                Transforming smiles with precision, artistry, and modern techniques.
-              </div>
-            </div>
-
-            <div className="highlight-card">
-              <span className="star">★</span>
-              <strong>ADVANCED FACILITIES</strong>
-              <p>STATE-OF-THE-ART CLINIC</p>
-              <div className="highlight-details">
-                Equipped with the latest dental equipment for comfortable and effective treatments.
-              </div>
-            </div>
+            ))}
           </div>
 
-  <a href="/contact"><button className="about-button">BOOK AN APPOINTMENT</button></a>
-          
+          <a href="/contact">
+            <button className="about-button">BOOK AN APPOINTMENT</button>
+          </a>
         </div>
       </div>
     </section>

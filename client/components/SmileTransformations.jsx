@@ -1,3 +1,4 @@
+import React from "react";
 import img1 from "../assets/1.jpg";
 import img2 from "../assets/2.jpg";
 import img3 from "../assets/3.jpg";
@@ -12,14 +13,18 @@ const patients = [img1, img2, img3, img4, img5, img6, img7, img8];
 const SmileTransformations = () => {
   return (
     <div className="bg-black py-10 px-4">
-      <h2 className="text-white text-center text-xl md:text-3xl font-semibold mb-10 tracking-wide p-10">
+      <h2 className="text-white text-center text-xl md:text-3xl font-semibold mb-10 tracking-wide p-10 animate-on-hover">
         SMILE TRANSFORMATIONS
       </h2>
 
       {/* Responsive grid: 2 on mobile, 4 on laptop+ */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
         {patients.map((img, index) => (
-          <div key={index} className="overflow-hidden rounded-md">
+          <div
+            key={index}
+            className="overflow-hidden rounded-md animate-on-hover"
+            style={{ "--index": index }}
+          >
             <img
               src={img}
               alt={`Patient ${index + 1}`}
@@ -28,6 +33,38 @@ const SmileTransformations = () => {
           </div>
         ))}
       </div>
+
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        .animate-on-hover:hover {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .animate-on-hover:hover .animate-on-hover,
+        .animate-on-hover:hover img {
+          animation: fadeIn 0.6s ease-out forwards;
+          animation-delay: calc(var(--index) * 0.1s);
+        }
+      `}</style>
     </div>
   );
 };

@@ -19,7 +19,7 @@ export default function HeroSection() {
 
       {/* Text Content */}
       <div className="relative max-w-7xl w-full flex justify-center sm:justify-end pb-6 sm:pb-8 md:pb-10 lg:pb-12 animate-slideInRight">
-        <div className="bg-black/60 lg:bg-transparent p-4 sm:p-6 md:p-8 rounded-lg w-full sm:w-1/2 lg:w-5/12 xl:w-1/2 lg:mr-12 text-white font-dancing text-center sm:text-right px-2 sm:px-4 md:px-6">
+        <div className="bg-black/60 lg:bg-transparent p-4 sm:p-6 md:p-8 rounded-lg w-full sm:w-1/2 lg:w-5/12 xl:w-1/2 lg:mr-12 text-white font-dancing text-center sm:text-right px-2 sm:px-4 md:px-6 animate-on-hover">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
             Your Health, Our Priority
           </h1>
@@ -41,7 +41,7 @@ export default function HeroSection() {
         @keyframes slideInRight {
           from {
             opacity: 0;
-            transform: translateX(60px);
+            transform: translateX(40px);
           }
           to {
             opacity: 1;
@@ -49,7 +49,10 @@ export default function HeroSection() {
           }
         }
         .animate-slideInRight {
-          animation: slideInRight 1s ease-out forwards;
+          animation: slideInRight 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .animate-on-hover:hover {
+          animation: slideInRight 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
       `}</style>
     </section>

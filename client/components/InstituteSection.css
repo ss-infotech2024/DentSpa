@@ -41,11 +41,19 @@
   word-break: break-word;
 }
 
+.text-background h2:hover {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
 .google-reviews {
   font-size: clamp(0.85rem, 1.2vw, 1rem);
   margin-top: 0.5rem;
   color: gold;
   font-weight: bold;
+}
+
+.google-reviews:hover {
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 .highlights {
@@ -66,6 +74,8 @@
 
 .highlight-card:hover {
   transform: translateY(-5px);
+  animation: fadeInScale 0.6s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.1s);
 }
 
 .highlight-card .star {
@@ -110,6 +120,7 @@
 .about-button:hover {
   background-color: #ffd95a;
   transform: scale(1.05);
+  animation: pulse 1s ease-in-out;
 }
 
 /* Mobile adjustments */
@@ -134,5 +145,46 @@
 @media (min-width: 1600px) {
   .text-content {
     max-width: 1400px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.1);
   }
 }
