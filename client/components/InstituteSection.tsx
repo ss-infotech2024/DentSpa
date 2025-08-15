@@ -1,10 +1,10 @@
-import React from 'react';
-import './InstituteSection.css'; // External styling
-import instituteBg from '../assets/institute-bg1.jpg'; // Adjust the path if needed
+import React from "react";
+import "./InstituteSection.css";
+import instituteBg from "../assets/institute-bg1.jpg";
 
-const InstituteSection: React.FC = () => {
+const InstituteSection = () => {
   return (
-    <div
+    <section
       className="institute-section"
       style={{ backgroundImage: `url(${instituteBg})` }}
     >
@@ -21,40 +21,38 @@ const InstituteSection: React.FC = () => {
           <div className="highlights">
             <div className="highlight-card">
               <span className="star">★</span>
-              <br />
               <strong>INTERNATIONAL LECTURER</strong>
-              <br />
-              AESTHETIC & RESTORATIVE DENTISTRY
+              <p>AESTHETIC & RESTORATIVE DENTISTRY</p>
               <div className="highlight-details">
-                Over a decade of experience transforming smiles with artistic vision and scientific precision
+                Over a decade of experience transforming smiles with artistic
+                vision and scientific precision
               </div>
             </div>
+
             <div className="highlight-card">
               <span className="star">★</span>
-              <br />
               <strong>TOP COSMETIC DENTIST</strong>
-              <br />
-              MULTIPLE AWARD WINNER
+              <p>MULTIPLE AWARD WINNER</p>
               <div className="highlight-details">
                 Recognized for excellence in cosmetic dentistry and patient care
               </div>
             </div>
+
             <div className="highlight-card">
               <span className="star">★</span>
-              <br />
               <strong>INVISALIGN</strong>
-              <br />
-              PLATINUM PROVIDER & GLOBAL TRAINER
+              <p>PLATINUM PROVIDER & GLOBAL TRAINER</p>
               <div className="highlight-details">
-                Specialist in minimally invasive techniques and digital smile design
+                Specialist in minimally invasive techniques and digital smile
+                design
               </div>
             </div>
           </div>
 
-          <button className="about-button hover:bg-gold-light">MEET DR. CHANDAK</button>
+          <button className="about-button">MEET DR. CHANDAK</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

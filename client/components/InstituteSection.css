@@ -1,186 +1,108 @@
 .institute-section {
+  width: 100%;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  background-repeat: no-repeat;
   position: relative;
-  color: white;
+  color: white; /* Default for all text */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.5); /* semi-transparent dark overlay */
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 2rem;
-}
-
-.text-content {.institute-section {
-  position: relative;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: clamp(1rem, 4vw, 3rem);
 }
 
 .text-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  color: white;
 }
 
-.text-background {
-  display: inline-block;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  margin-bottom: 30px;
-}
-
-h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+.text-background h2 {
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
   line-height: 1.4;
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: clamp(0.6rem, 2vw, 1.2rem) clamp(0.8rem, 3vw, 1.5rem);
+  border-radius: 8px;
+  color: white;
 }
 
 .highlights {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 40px 0;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .highlight-card {
-  padding: 20px;
-  margin: 10px;
-  width: 280px;
-  min-height: 180px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  padding: clamp(0.8rem, 2vw, 1.2rem);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+  color: white; /* Ensures all text inside is white */
 }
 
 .highlight-card:hover {
-  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.highlight-card:hover .highlight-details {
-  opacity: 1;
-  transform: translateY(0);
+.highlight-card .star {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: gold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-card strong {
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  color: white;
+}
+
+.highlight-card p {
+  margin: 0.3rem 0;
+  font-weight: 500;
+  color: white;
 }
 
 .highlight-details {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 15px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.star {
-  color: #ffd700;
-  font-size: 1.5rem;
-}
-
-.about-button {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 30px;
-  margin-top: 20px;
-}
-
-.about-button:hover {
-  background-color:#F5D76E ;
-  color: #333;
-}
-
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  .highlights {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .highlight-card {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-}
-  text-align: center;
-  max-width: 900px;
-}
-
-.text-content h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.highlights {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.highlights > div {
-  width: 30%;
-  font-size: 0.9rem;
-}
-
-.star {
-  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   color: white;
 }
 
 .about-button {
-  background-color: black;
-  color: white;
-  padding: 0.75rem 2rem;
-  border: 1px solid white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.about-button:hover {
-  background-color: white;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  background-color: gold;
   color: black;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #ffd95a;
+  transform: scale(1.05);
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .text-background h2 {
+    display: block;
+    width: 100%;
+  }
 }
