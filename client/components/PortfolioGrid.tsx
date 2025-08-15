@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { filters, portfolioData } from "./data/data"; // Ensure path is correct
 
 const PortfolioGrid: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState("");
+  const [activeFilter, setActiveFilter] = useState("ALL");
   const images = portfolioData[activeFilter] || [];
 
   return (
@@ -16,9 +16,12 @@ const PortfolioGrid: React.FC = () => {
       >
         {/* Optional overlay for readability */}
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-        <h1 className="relative text-white text-lg sm:text-2xl md:text-4xl font-semibold z-10">
-          {activeFilter.replace("®", "")}
-        </h1>
+       <h1 className="relative text-white text-lg sm:text-2xl md:text-4xl font-semibold z-10">
+  {activeFilter === "ALL"
+    ? ""
+    : activeFilter.replace("®", "")}
+</h1>
+
       </div>
 
       <section className="bg-black py-10 px-4 md:px-8 max-w-[1440px] mx-auto">

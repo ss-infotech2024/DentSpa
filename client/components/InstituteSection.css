@@ -19,7 +19,132 @@
   padding: 2rem;
 }
 
+.text-content {.institute-section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .text-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-background {
+  display: inline-block;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.highlights {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.highlight-card {
+  padding: 20px;
+  margin: 10px;
+  width: 280px;
+  min-height: 180px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-card:hover .highlight-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.highlight-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.star {
+  color: #ffd700;
+  font-size: 1.5rem;
+}
+
+.about-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+.about-button:hover {
+  background-color:#F5D76E ;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .highlight-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
   text-align: center;
   max-width: 900px;
 }
