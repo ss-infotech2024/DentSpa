@@ -39,8 +39,8 @@ export function Navigation({ className }: NavigationProps) {
   className={cn(
     "transparentToBlack Serif w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 fixed top-0 left-0 z-50 transition-colors duration-500 h-[100px]",
     isScrolled
-      ? "bg-[rgba(0,0,0,0.0)] shadow-lg" // Scrolled → semi-transparent black
-      : "bg-[rgba(0,0,0,0.0)]", // Not scrolled → lighter transparency
+      ? "bg-[rgb(0,0,0)] shadow-lg" // Scrolled → semi-transparent black
+      : "bg-[rgb(0,0,0)]", // Not scrolled → lighter transparency
     className
   )}
 >
