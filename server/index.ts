@@ -19,7 +19,7 @@ export function createServer() {
 
   // Serve Vite build in production
   if (process.env.NODE_ENV === "production") {
-    const frontendPath = path.join(__dirname, "../dist/spa"); // Updated path
+    const frontendPath = path.join(__dirname, "../dist/spa");
     app.use(express.static(frontendPath));
 
     // SPA fallback for client-side routing
@@ -28,10 +28,9 @@ export function createServer() {
     });
   }
 
-  // Example API routes
+  // API routes
   app.get("/api/ping", (_req, res) => {
-    const ping = process.env.PING_MESSAGE ?? "ping";
-    res.json({ message: ping });
+    res.json({ message: process.env.PING_MESSAGE ?? "ping" });
   });
 
   app.get("/api/demo", handleDemo);
@@ -39,9 +38,9 @@ export function createServer() {
   return app;
 }
 
-// If this file is run directly (Render will call npm start)
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const port = process.env.PORT || 3000;
+// Start the server only if run directly
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const port = process.env.PORT || 3000; // Always use Render's assigned port
   const app = createServer();
   app.listen(port, () => {
     console.log(`✅ Server running on port ${port}`);

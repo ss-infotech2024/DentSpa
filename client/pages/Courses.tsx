@@ -261,7 +261,20 @@ const courseSections: CourseSection[] = [
   },
 ];
 
-interface CourseCardProps extends CourseItem {
+interface CourseCardProps {
+  title: string;
+  description: string;
+  duration: string;
+  topics: string[];
+  cases: string;
+  videoDemos: string[];
+  handsOn: string[];
+  giveaways: string[];
+  participantRequirements: string[];
+  fees: string;
+  postSupport: string;
+  image: string;
+  brochure: string;
   isWide?: boolean;
 }
 
@@ -289,29 +302,32 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
   return (
     <div
-  className={`bg-[#131313] text-white p-4 sm:p-6 md:p-8 border-2 border-[#CD9E42] rounded-lg 
-  w-full sm:w-[600px] md:w-[600px] lg:w-[1000px] xl:w-[1200px] h-auto`}
->
-      <div className="flex flex-col md:flex-row gap-4 md:gap-6 h-full">
+      className={`bg-[#131313] text-white p-4 border-2 border-[#CD9E42] rounded-lg w-full
+      sm:w-[600px] md:w-[600px] lg:w-[1000px] xl:w-[1200px] h-auto max-h-[600px] sm:max-h-[800px]`}
+    >
+      <div className="flex flex-col md:flex-row gap-4 h-full">
+        {/* Image Section */}
         <div className="md:w-1/2 flex flex-col">
-          <img 
-            src={image} 
-            alt={title} 
-            className="w-full h-auto object-cover rounded mb-4"
-            onError={(e) => (e.currentTarget.src = "/assets/fallback-image.jpg")}
-          />
+          <div className="w-full h-[150px] sm:h-[200px] md:h-[250px] overflow-hidden rounded mb-4">
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-contain"
+              onError={(e) => (e.currentTarget.src = "/assets/fallback-image.jpg")}
+            />
+          </div>
           {showFull && (
-            <div className="flex-grow overflow-y-auto max-h-[300px] p-2 scrollbar-hidden">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold">Topics Covered</h3>
-              <ul className="list-disc pl-5 text-sm sm:text-base columns-1 sm:columns-1 gap-2">
+            <div className="flex-grow overflow-y-auto max-h-[150px] sm:max-h-[200px] p-2 scrollbar-hidden">
+              <h3 className="text-sm sm:text-base font-semibold">Topics Covered</h3>
+              <ul className="list-disc pl-5 text-xs sm:text-sm columns-1">
                 {topics.map((topic, i) => (
                   <li key={i}>{topic}</li>
                 ))}
               </ul>
               {videoDemos.length > 0 && (
                 <>
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-4">Video Demos</h3>
-                  <ul className="list-disc pl-5 text-sm sm:text-base">
+                  <h3 className="text-sm sm:text-base font-semibold mt-3">Video Demos</h3>
+                  <ul className="list-disc pl-5 text-xs sm:text-sm">
                     {videoDemos.map((demo, i) => (
                       <li key={i}>{demo}</li>
                     ))}
@@ -320,43 +336,35 @@ const CourseCard: React.FC<CourseCardProps> = ({
               )}
               {handsOn.length > 0 && (
                 <>
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-4">Hands-On</h3>
-                  <ul className="list-disc pl-5 text-sm sm:text-base">
+                  <h3 className="text-sm sm:text-base font-semibold mt-3">Hands-On</h3>
+                  <ul className="list-disc pl-5 text-xs sm:text-sm">
                     {handsOn.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
                   </ul>
                 </>
               )}
-              <style>
-                {`.scrollbar-hidden::-webkit-scrollbar {
-                  display: none;
-                }
-                .scrollbar-hidden {
-                  -ms-overflow-style: none; /* IE and Edge */
-                  scrollbar-width: none; /* Firefox */
-                }`}
-              </style>
             </div>
           )}
         </div>
+        {/* Content Section */}
         <div className="md:w-1/2 flex flex-col justify-between">
           <div>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#CD9E42]">{title}</h2>
-            <p className="text-sm sm:text-base mt-2">{description}</p>
-            <p className="text-sm sm:text-base text-gray-600 mt-2">Duration: {duration}</p>
+            <h2 className="text-base sm:text-xl md:text-2xl font-bold text-[#CD9E42]">{title}</h2>
+            <p className="text-xs sm:text-sm mt-2 line-clamp-3 sm:line-clamp-4">{description}</p>
+            <p className="text-xs sm:text-sm text-gray-600 mt-2">Duration: {duration}</p>
             {showFull && (
-              <div className="mt-4 overflow-y-auto max-h-[300px] p-2 scrollbar-hidden">
+              <div className="mt-3 overflow-y-auto max-h-[150px] sm:max-h-[200px] p-2 scrollbar-hidden">
                 {cases && (
                   <>
-                    <h3 className="text-base sm:text-lg md:text-xl font-semibold">Cases Discussed</h3>
-                    <p className="text-sm sm:text-base">{cases}</p>
+                    <h3 className="text-sm sm:text-base font-semibold">Cases Discussed</h3>
+                    <p className="text-xs sm:text-sm">{cases}</p>
                   </>
                 )}
                 {giveaways.length > 0 && (
                   <>
-                    <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-4">Giveaways</h3>
-                    <ul className="list-disc pl-5 text-sm sm:text-base">
+                    <h3 className="text-sm sm:text-base font-semibold mt-3">Giveaways</h3>
+                    <ul className="list-disc pl-5 text-xs sm:text-sm">
                       {giveaways.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
@@ -365,39 +373,33 @@ const CourseCard: React.FC<CourseCardProps> = ({
                 )}
                 {participantRequirements.length > 0 && (
                   <>
-                    <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-4">Participant Requirements</h3>
-                    <ul className="list-disc pl-5 text-sm sm:text-base">
+                    <h3 className="text-sm sm:text-base font-semibold mt-3">Participant Requirements</h3>
+                    <ul className="list-disc pl-5 text-xs sm:text-sm">
                       {participantRequirements.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
                   </>
                 )}
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-4">Fees</h3>
-                <p className="text-sm sm:text-base">{fees}</p>
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-4">Post Course Support</h3>
-                <p className="text-sm sm:text-base">{postSupport}</p>
-                <style>
-                  {`.scrollbar-hidden::-webkit-scrollbar {
-                    display: none;
-                  }
-                  .scrollbar-hidden {
-                    -ms-overflow-style: none; /* IE and Edge */
-                    scrollbar-width: none; /* Firefox */
-                  }`}
-                </style>
+                <h3 className="text-sm sm:text-base font-semibold mt-3">Fees</h3>
+                <p className="text-xs sm:text-sm">{fees}</p>
+                <h3 className="text-sm sm:text-base font-semibold mt-3">Post Course Support</h3>
+                <p className="text-xs sm:text-sm">{postSupport}</p>
               </div>
             )}
           </div>
           <div className="mt-4">
             <div className="flex flex-col sm:flex-row gap-2">
-              <button onClick={toggleFull} className="bg-[#CD9E42] text-white px-4 sm:px-6 py-2 sm:py-3 rounded text-sm sm:text-base flex-1">
+              <button
+                onClick={toggleFull}
+                className="bg-[#CD9E42] text-white px-4 py-2 rounded text-xs sm:text-sm flex-1"
+              >
                 {showFull ? "SHOW LESS" : "LEARN MORE"}
               </button>
               <a
                 href={brochure}
                 download
-                className="bg-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded text-sm sm:text-base flex-1 text-center"
+                className="bg-gray-700 text-white px-4 py-2 rounded text-xs sm:text-sm flex-1 text-center"
               >
                 Download Brochure
               </a>
@@ -405,38 +407,17 @@ const CourseCard: React.FC<CourseCardProps> = ({
           </div>
         </div>
       </div>
-    </div>
-  );
-};35
-
-const Course: React.FC = () => {
-  return (
-    <div className="bg-[rgb(2,2,2)] text-white min-h-screen px-4 sm:px-6">
-      <Navigation />
-
-      {courseSections.map((section, idx) => (
-        <div key={idx} className="container mx-auto py-20 sm:py-10 md:py-40">
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#CD9E42]">{section.heading}</h1>
-            {section.subheading && (
-              <p className="text-sm sm:text-base text-gray-400 mt-2 sm:mt-4 max-w-3xl mx-auto">{section.subheading}</p>
-            )}
-          </div>
-          <div className="flex justify-center flex-wrap gap-6 sm:gap-8 mt-6 sm:mt-8">
-            {section.courses.map((course, i) => (
-              <CourseCard
-                key={i}
-                {...course}
-                isWide={true}
-              />
-            ))}
-          </div>
-        </div>
-      ))}
-
-      <Footer />
+      <style>
+        {`.scrollbar-hidden::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hidden {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+        }`}
+      </style>
     </div>
   );
 };
 
-export default Course;
+export default CourseCard;
