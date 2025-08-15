@@ -10,39 +10,48 @@ const InstituteSection: React.FC = () => {
     >
       <div className="overlay">
         <div className="text-content">
-          <h2>
-            New state of the art dental clinic <br />
-            and dental training institute <br />
-            in the heart of central London
-          </h2>
+          <div className="text-background">
+            <h2>
+              Dr. Debashree Chandak's State-of-the-Art Dental Clinic <br />
+              and Advanced Training Institute <br />
+              in the Heart of Central London
+            </h2>
+          </div>
 
           <div className="highlights">
-            <div>
+            <div className="highlight-card">
               <span className="star">★</span>
               <br />
               <strong>INTERNATIONAL LECTURER</strong>
               <br />
-              AESTHETIC DENTISTRY
+              AESTHETIC & RESTORATIVE DENTISTRY
+              <div className="highlight-details">
+                Over a decade of experience transforming smiles with artistic vision and scientific precision
+              </div>
             </div>
-            <div>
+            <div className="highlight-card">
               <span className="star">★</span>
               <br />
-              <strong>PRIVATE DENTISTRY ELITE</strong>
+              <strong>TOP COSMETIC DENTIST</strong>
               <br />
-              DENTISTRY MAGAZINE POLL
+              MULTIPLE AWARD WINNER
+              <div className="highlight-details">
+                Recognized for excellence in cosmetic dentistry and patient care
+              </div>
             </div>
-            <div>
+            <div className="highlight-card">
               <span className="star">★</span>
               <br />
               <strong>INVISALIGN</strong>
               <br />
-              UK AMBASSADOR
-              <br />
-              GLOBAL GP TRAINER
+              PLATINUM PROVIDER & GLOBAL TRAINER
+              <div className="highlight-details">
+                Specialist in minimally invasive techniques and digital smile design
+              </div>
             </div>
           </div>
 
-          <button className="about-button">ABOUT ME</button>
+          <button className="about-button hover:bg-gold-light">MEET DR. CHANDAK</button>
         </div>
       </div>
     </div>

@@ -36,7 +36,7 @@ export function Navigation({ className }: NavigationProps) {
   return (
    <nav
   className={cn(
-    "transparentToBlack Serif w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 fixed top-0 left-0 z-50 transition-colors duration-500",
+    "transparentToBlack Serif w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 fixed top-0 left-0 z-50 transition-colors duration-500 h-[100px]",
     isScrolled
       ? "bg-[rgba(0,0,0,0.0)] shadow-lg" // Scrolled → semi-transparent black
       : "bg-[rgba(0,0,0,0.0)]", // Not scrolled → lighter transparency
@@ -60,11 +60,11 @@ export function Navigation({ className }: NavigationProps) {
         </div>
 
         {/* Center Logo */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center h-[19px]">
           <img
             src={logo}
             alt="Dr. Debashree Chandak Logo"
-            className="h-24 md:h-28 object-contain" // Increased height
+            className="xl:h-[75px] md:h-28 object-contain" // Increased height
           />
         </div>
 
