@@ -17,14 +17,14 @@ export function createServer() {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
 
-  // Serve React build in production
+  // Serve Vite build in production
   if (process.env.NODE_ENV === "production") {
-    const frontendPath = path.join(__dirname, "../frontend/build");
+    const frontendPath = path.join(__dirname, "../dist/spa"); // Updated path
     app.use(express.static(frontendPath));
 
-    // SPA Fallback (for direct refresh)
+    // SPA fallback for client-side routing
     app.get("*", (req, res) => {
-      res.sendFile(path.resolve(frontendPath, "index.html"));
+      res.sendFile(path.join(frontendPath, "index.html"));
     });
   }
 
@@ -37,4 +37,13 @@ export function createServer() {
   app.get("/api/demo", handleDemo);
 
   return app;
+}
+
+// If this file is run directly (Render will call npm start)
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const port = process.env.PORT || 3000;
+  const app = createServer();
+  app.listen(port, () => {
+    console.log(`✅ Server running on port ${port}`);
+  });
 }
