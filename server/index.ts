@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
-import { handleDemo } from "./routes/demo.js"; // Added .js for ES modules
+import { handleDemo } from "./routes/demo.js"; // API route
 
 export function createServer() {
   const app = express();
@@ -17,12 +17,12 @@ export function createServer() {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
 
-  // Serve frontend (React build) in production
+  // Serve React build in production
   if (process.env.NODE_ENV === "production") {
     const frontendPath = path.join(__dirname, "../frontend/build");
     app.use(express.static(frontendPath));
 
-    // Catch-all route for SPA
+    // SPA Fallback (for direct refresh)
     app.get("*", (req, res) => {
       res.sendFile(path.resolve(frontendPath, "index.html"));
     });
