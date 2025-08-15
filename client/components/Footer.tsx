@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInstagram } from 'react-icons/fa';
-
+import logo from "../assets/logo.png";
 const Footer = () => {
   return (
     <div
@@ -26,18 +26,16 @@ const Footer = () => {
         </a>
 
         <div className="flex flex-wrap justify-center space-x-6 uppercase text-sm font-medium mb-6">
-          <a href="#">Home</a>
-          <a href="#">About Me</a>
-          <a href="#">Treatments</a>
-          <a href="#">Portfolio</a>
-          <a href="#">Press</a>
-          <a href="#">Courses</a>
-          <a href="#">E-Store</a>
+          <a href="/">Home</a>
+          <a href="/about">About Me</a>
+          <a href="/treatments">Treatments</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/courses">Courses</a>
           <a href="#">Contact Us</a>
         </div>
 
         <p className="text-xs text-gray-400 mb-4">
-          Copyright © 2025 Monik Vasant. Site last updated: 11 April 2024. All rights reserved. Made by
+          Copyright © 2025 DR DEBASHREE CHANDAK. Site last updated: 11 April 2024. All rights reserved. Made by
           Digimax Dental Marketing.
         </p>
 
@@ -47,7 +45,14 @@ const Footer = () => {
           <a href="#">Cookie Settings</a>
         </div>
 
-        <div className="mt-6 text-4xl font-light tracking-widest text-yellow-500">DC</div>
+         {/* Center Logo */}
+        <div className="flex flex-col items-center">
+          <img
+            src={logo}
+            alt="Dr. Debashree Chandak Logo"
+            className="h-24 md:h-28 object-contain" // Increased height
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,16 +1,21 @@
 import React from "react";
-import patientImg from "../assets/thumb1-for-patients.jpg";
-import dentistImg from "../assets/for-dentists.jpg";
+import { useNavigate } from "react-router-dom";
+// import patientImg from ""; // Image for patients
+import dentistImg from "../assets/doctor1.png"; // Image for dentists
 
 const PatientDentistSection: React.FC = () => {
+  const navigate = useNavigate();
+
   const blocks = [
     {
       title: "FOR PATIENTS",
-      img: patientImg,
+      img: "https://tse3.mm.bing.net/th/id/OIP.epl19AEk8GEkIFvG6f0jgwHaEc?pid=Api&P=0&h=180",
+      link: "/treatments",
     },
     {
       title: "FOR DENTISTS",
       img: dentistImg,
+      link: "/treatments",
     },
   ];
 
@@ -19,16 +24,22 @@ const PatientDentistSection: React.FC = () => {
       {blocks.map((block, index) => (
         <div
           key={index}
-          className="relative group h-[400px] w-full overflow-hidden border border-white  shadow-md cursor-pointer"
+          onClick={() => navigate(block.link)}
+          className="relative group h-[350px] sm:h-[400px] w-full overflow-hidden border border-white shadow-md cursor-pointer rounded-lg"
         >
+          {/* Background Image */}
           <img
             src={block.img}
             alt={block.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
+
+          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#C8A97E66] via-transparent to-[#C8A97E33] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          {/* Title */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-white text-xl font-semibold tracking-widest">
+            <span className="text-white text-lg sm:text-xl md:text-2xl font-semibold tracking-widest drop-shadow-lg">
               {block.title}
             </span>
           </div>
