@@ -117,7 +117,7 @@ export default function Treatments() {
     {
       title: "Dental Veneers",
       description: "Enhance your smile with custom dental veneers for a flawless, natural look.",
-      image: "https://dentech.co.in/wp-content/uploads/2023/07/image-11.png",
+      image: "https://tse2.mm.bing.net/th/id/OIP.tLSra1EhCJ1orKE7AWCVWgHaHa?pid=Api&P=0&h=180",
       link: "https://docs.google.com/document/d/1sE_8Lfo5kUWy90scUEa9q4Gih7qnJPvc5d5mCZhPZ-k/edit?usp=sharing",
     },
     {
@@ -205,7 +205,7 @@ export default function Treatments() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#C8A97E]">
           Our Treatments
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
           {treatments.map((treatment, index) => (
             <InView
               key={index}
@@ -225,21 +225,21 @@ export default function Treatments() {
                   <img
                     src={treatment.image}
                     alt={treatment.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-48 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                   {/* Title and Description */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-end p-4">
+                  <div className="absolute inset-0 flex flex-col items-center justify-end p-2 sm:p-4">
                     <div className="bg-black/50 w-full text-center py-2 rounded">
                       <h3
-                        className="text-white group-hover:text-[#C8A97E] text-xl font-semibold tracking-wide transition-colors duration-300"
+                        className="text-white group-hover:text-[#C8A97E] text-base sm:text-xl font-semibold tracking-wide transition-colors duration-300"
                         style={{ textShadow: "0 0 8px rgba(0, 0, 0, 0.8)" }}
                       >
                         {treatment.title}
                       </h3>
                       <p
-                        className="text-gray-200 text-sm mt-1 px-2"
+                        className="text-gray-200 text-xs sm:text-sm mt-1 px-2"
                         style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.7)" }}
                       >
                         {treatment.description}
