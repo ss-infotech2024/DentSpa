@@ -15,9 +15,9 @@ export function Navigation({ className }: NavigationProps) {
     { name: "HOME", path: "/" },
     { name: "ABOUT ME", path: "/about" },
     { name: "TREATMENTS", path: "/treatments" },
-    { name: "CONTACT", path: "/contact",  },
-    { name: "PORTFOLIO", path: "/portfolio",  },
-    { name: "COURSES", path: "/courses",  },
+    { name: "CONTACT", path: "/contact" },
+    { name: "PORTFOLIO", path: "/portfolio" },
+    { name: "COURSES", path: "/courses" },
   ];
 
   const toggleMobileMenu = () => {
@@ -35,25 +35,22 @@ export function Navigation({ className }: NavigationProps) {
   }, []);
 
   return (
-   <nav
-  className={cn(
-    "transparentToBlack Serif w-full px-4 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 fixed top-0 left-0 z-50 transition-colors duration-500 h-[100px]",
-    isScrolled
-      ? "bg-[rgba(0,0,0,0.90)] shadow-lg" // Scrolled → semi-transparent black
-      : "bg-[rgba(0,0,0,0.90)]", // Not scrolled → lighter transparency
-    className
-  )}
->
-
+    <nav
+      className={cn(
+        "w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 fixed top-0 left-0 z-50 transition-shadow duration-300",
+        isScrolled ? "bg-black shadow-md" : "bg-black",
+        className
+      )}
+    >
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center justify-between">
+      <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto">
         {/* Left Nav */}
-        <div className="flex items-center space-x-4 md:space-x-6">
+        <div className="flex items-center space-x-4 lg:space-x-6">
           {navItems.slice(0, 3).map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className="text-gold text-xs md:text-sm font-medium tracking-wide hover:text-gold-light transition pt10"
+              className="text-[#C8A97E] text-sm lg:text-base font-medium tracking-wide hover:text-[#D9C2A6] transition-colors duration-200"
             >
               {item.name}
             </Link>
@@ -61,98 +58,89 @@ export function Navigation({ className }: NavigationProps) {
         </div>
 
         {/* Center Logo */}
-        <div className="flex flex-col items-center h-[19px]">
+        <div className="flex items-center justify-center">
           <img
             src={logo}
             alt="Dr. Debashree Chandak Logo"
-            className="xl:h-[75px] md:h-28 object-contain" // Increased height
+            className="h-10 sm:h-12 lg:h-14 object-contain"
           />
         </div>
 
         {/* Right Nav */}
-        <div className="flex items-center space-x-4 md:space-x-6">
+        <div className="flex items-center space-x-4 lg:space-x-6">
           {navItems.slice(3).map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className="text-gold text-xs md:text-sm font-medium tracking-wide hover:text-gold-light transition flex items-center"
+              className="text-[#C8A97E] text-sm lg:text-base font-medium tracking-wide hover:text-[#D9C2A6] transition-colors duration-200"
             >
               {item.name}
-              {item.hasDropdown && (
-                <svg
-                  className="ml-1 w-3 h-3"
-                  fill="currentColor"
-                  viewBox="0 0 12 12"
-                >
-                  <path d="M6 8L2 4h8L6 8z" />
-                </svg>
-              )}
             </Link>
           ))}
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden">
-        {/* Top Row: Logo + Hamburger */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center">
-            <img src={logo} alt="Logo" className="h-10 object-contain" />
-          </div>
-          <button
-            onClick={toggleMobileMenu}
-            className="text-gold focus:outline-none"
-          >
-            {isMobileMenuOpen ? (
-              // Close icon
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              // Hamburger icon
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
+      <div className="md:hidden flex items-center justify-between max-w-7xl mx-auto">
+        {/* Logo */}
+        <div className="flex items-center">
+          <img src={logo} alt="Logo" className="h-8 sm:h-10 object-contain" />
         </div>
+        {/* Hamburger Button */}
+        <button
+          onClick={toggleMobileMenu}
+          className="text-[#C8A97E] focus:outline-none focus:ring-2 focus:ring-[#C8A97E] rounded"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+        >
+          {isMobileMenuOpen ? (
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
 
-        {/* Mobile Menu Items */}
-        {isMobileMenuOpen && (
-          <div className="grid grid-cols-2 gap-3 transition-all duration-300">
+      {/* Mobile Menu Items */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden mt-2 bg-black p-3 rounded-lg max-w-7xl mx-auto overflow-x-auto">
+          <div className="flex flex-row space-x-4 whitespace-nowrap">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gold text-xs font-medium tracking-wide hover:text-gold-light transition-colors duration-200 text-center py-2"
+                className="text-[#C8A97E] text-xs font-medium tracking-wide hover:text-[#D9C2A6] transition-colors duration-200 py-1"
               >
                 {item.name}
               </Link>
             ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 }
