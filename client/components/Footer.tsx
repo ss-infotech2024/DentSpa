@@ -31,7 +31,7 @@ const Footer = () => {
           <a href="/treatments">Treatments</a>
           <a href="/portfolio">Portfolio</a>
           <a href="/courses">Courses</a>
-          <a href="#">Contact Us</a>
+          <a href="/contact">Contact Us</a>
         </div>
 
         <p className="text-xs text-gray-400 mb-4">

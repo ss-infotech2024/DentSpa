@@ -15,7 +15,7 @@ import Courses from "./pages/Courses";
 import Store from "./pages/Store";
 import Press from "./pages/Press";
 import NotFound from "./pages/NotFound";
-
+import Contact from "./pages/ContactUs";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -35,6 +35,7 @@ const App = () => (
           <Route path="/press" element={<Press />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
+          <Route path="/contact" element={<Contact/>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
