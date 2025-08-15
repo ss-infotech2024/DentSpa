@@ -9,13 +9,13 @@ const PatientDentistSection: React.FC = () => {
   const blocks = [
     {
       title: "FOR PATIENTS",
-      img: "https://tse3.mm.bing.net/th/id/OIP.epl19AEk8GEkIFvG6f0jgwHaEc?pid=Api&P=0&h=180",
+      img: "https://media.istockphoto.com/id/486624961/photo/dental-exam.jpg?s=612x612&w=0&k=20&c=YPshgGWuigz00DmZkjrZcdXMxPhIpX46HCwV-7lfmoM=",
       link: "/treatments",
     },
     {
       title: "FOR DENTISTS",
       img: dentistImg,
-      link: "/treatments",
+      link: "/contact",
     },
   ];
 

@@ -35,8 +35,8 @@ const Footer = () => {
         </div>
 
         <p className="text-xs text-gray-400 mb-4">
-          Copyright © 2025 DR DEBASHREE CHANDAK. Site last updated: 11 April 2024. All rights reserved. Made by
-          Digimax Dental Marketing.
+          Copyright © 2025 DR DEBASHREE CHANDAK. Site last updated: 15 Aug 2025. All rights reserved. Made by
+          <a href="https://www.ssinfotech.co/">  SS Infotech.</a>
         </p>
 
         <div className="flex flex-wrap justify-center space-x-4 text-xs text-gray-400">
