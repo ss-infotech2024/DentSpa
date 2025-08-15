@@ -146,79 +146,134 @@ export default function Treatments() {
     },
   ];
 
-    const handleCardClick = (link) => {
+  const handleCardClick = (link) => {
     if (link) {
-      window.location.href = link;
+      window.open(link, "_blank", "noopener,noreferrer");
     }
   };
 
+  // Group treatments into rows based on grid layout (2 for mobile, 3 for sm, 4 for lg)
+  const getRows = (treatments, colsPerBreakpoint) => {
+    const rows = [];
+    let maxCols = 4; // Default to lg breakpoint (4 columns)
+    for (let i = 0; i < treatments.length; i += maxCols) {
+      rows.push(treatments.slice(i, i + maxCols));
+    }
+    return rows;
+  };
+
+  const rows = getRows(treatments, { xs: 2, sm: 3, lg: 4 });
+
   return (
-    <section className="bg-black py-16 px-4 text-white">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Our Treatments
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {treatments.map((treatment, index) => (
-            <InView key={index} triggerOnce threshold={0.15}>
-              {({ inView, ref }) => (
-                <div
-                  ref={ref}
-                  className={`group relative cursor-pointer overflow-hidden border border-white rounded-lg shadow-lg transition-all duration-300 hover:border-[#C8A97E] ${
-                    inView ? "animate-smoothSlideUp" : "opacity-0"
-                  } ${!treatment.link ? "cursor-default" : ""}`}
-                  style={{ animationDelay: `${index * 0.15}s` }}
-                  onClick={() => handleCardClick(treatment.link)}
-                >
-                  {/* Image */}
-                  <div className="h-64 overflow-hidden">
-                    <img
-                      src={treatment.image}
-                      alt={treatment.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold mb-2 text-white">
-                      {treatment.title}
-                    </h3>
-                    <p className="text-gray-300">{treatment.description}</p>
-                  </div>
-                </div>
-              )}
-            </InView>
-          ))}
-        </div>
-      </div>
-
-      {/* Animation Styles */}
+    <div className="min-h-screen pt-16" style={{ backgroundColor: "#070707" }}>
       <style>
         {`
-          @keyframes smoothSlideUp {
-            0% {
+          @keyframes ssinfotechShowSlide {
+            from {
               opacity: 0;
-              transform: translateY(60px) scale(0.95);
+              transform: translateY(30px) scale(0.96);
             }
-            60% {
-              opacity: 0.6;
-              transform: translateY(20px) scale(0.98);
-            }
-            100% {
+            to {
               opacity: 1;
               transform: translateY(0) scale(1);
             }
           }
-          .animate-smoothSlideUp {
-            animation: smoothSlideUp 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+          .animate-ssinfotechShowSlide {
+            animation: ssinfotechShowSlide 2s cubic-bezier(0.33, 0.1, 0.1, 1) forwards;
           }
-          .group:hover .animate-smoothSlideUp {
+          .group:hover .animate-ssinfotechShowSlide {
             transform: scale(1.03);
-            box-shadow: 0 8px 16px rgba(200, 169, 126, 0.25);
+            box-shadow: 0 6px 12px rgba(200, 169, 126, 0.2);
+            filter: brightness(1.1);
+          }
+          .row-transition {
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
           }
         `}
       </style>
-    </section>
+      <Navigation />
+      {/* Hero Section */}
+      <section className="py-20 text-center">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-light text-white mb-8">
+            TREATMENTS
+          </h1>
+          <div className="w-24 h-px bg-white mx-auto mb-8"></div>
+          <div className="max-w-4xl mx-auto space-y-6 text-gray-300 text-base">
+            <p>
+              At our dental clinic, we are committed to providing a comprehensive and personalized oral health experience.
+            </p>
+            <p>
+              Our multi-disciplinary team employs cutting-edge techniques to deliver exceptional results, ensuring both the health and aesthetics of your smile.
+            </p>
+            <p>
+              With decades of experience, we combine advanced technology and patient-centered care to offer a wide range of dental treatments tailored to your needs.
+            </p>
+            <p>
+              Explore our services to discover how we can help you achieve a confident, healthy smile.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Treatments Grid */}
+      <section className="max-w-7xl mx-auto px-4 py-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#C8A97E]">
+          Our Treatments
+        </h2>
+        {rows.map((row, rowIndex) => (
+          <InView key={rowIndex} threshold={0.25} triggerOnce={true}>
+            {({ inView, ref }) => (
+              <div
+                ref={ref}
+                className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 mb-8 row-transition ${
+                  inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+              >
+                {row.map((treatment, colIndex) => (
+                  <div
+                    key={colIndex}
+                    className={`group relative cursor-pointer overflow-hidden border border-white rounded-lg shadow-lg transition-all duration-150 hover:border-[#C8A97E] ${
+                      inView ? "animate-ssinfotechShowSlide" : "opacity-0"
+                    } ${!treatment.link ? "cursor-default" : ""}`}
+                    style={{ animationDelay: `${colIndex * 0.08}s` }}
+                    onClick={() => handleCardClick(treatment.link)}
+                  >
+                    {/* Image */}
+                    <img
+                      src={treatment.image}
+                      alt={treatment.title}
+                      className="w-full h-48 sm:h-64 object-cover transition-all duration-150 group-hover:scale-103 group-hover:brightness-110"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-150" />
+                    {/* Title and Description */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-end p-2 sm:p-4">
+                      <div className="bg-black/50 w-full text-center py-2 rounded">
+                        <h3
+                          className="text-white group-hover:text-[#C8A97E] text-base sm:text-xl font-semibold tracking-wide transition-colors duration-150"
+                          style={{ textShadow: "0 0 8px rgba(0, 0, 0, 0.8)" }}
+                        >
+                          {treatment.title}
+                        </h3>
+                        <p
+                          className="text-gray-200 text-xs sm:text-sm mt-1 px-2"
+                          style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.7)" }}
+                        >
+                          {treatment.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </InView>
+        ))}
+      </section>
+
+      <FeaturedLogos />
+      <Footer />
+    </div>
   );
 }
