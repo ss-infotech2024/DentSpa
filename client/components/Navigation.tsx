@@ -15,8 +15,9 @@ export function Navigation({ className }: NavigationProps) {
     { name: "HOME", path: "/" },
     { name: "ABOUT ME", path: "/about" },
     { name: "TREATMENTS", path: "/treatments" },
-    { name: "PORTFOLIO", path: "/portfolio", hasDropdown: true },
-    { name: "COURSES", path: "/courses", hasDropdown: true },
+    { name: "CONTACT", path: "/contact",  },
+    { name: "PORTFOLIO", path: "/portfolio",  },
+    { name: "COURSES", path: "/courses",  },
   ];
 
   const toggleMobileMenu = () => {
