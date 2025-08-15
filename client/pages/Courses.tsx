@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navigation } from "../components/Navigation";
 import Footer from "../components/Footer";
-import fmrCourseImg from "../assets/Course.png";
+import fmrCourseImg from "../assets/course1.png";
 // import crownCourseImg from "../assets/crown-course.png";
 import photoshopCourseImg from "../assets/photoshop.png";
 
@@ -140,7 +140,7 @@ const courseSections: CourseSection[] = [
         fees: "Rs 35000 for the FMR INDIRECT COMPOSITE COURSE. Rs 5000 extra- refundable deposit. Once you courier the hands on material and model back to us…we will refund this money back to you. WHY this fees is very nominal? ONE FMR earning ranges from 40k onwards… So you will recover this cost in your first case… Next 100s of cases that you do will all your effort, credit and profit. This course in an investment course",
         postSupport: "Post the course you will be added to the group, where assistance will be provided. All participants are in the group and post cases to motivate and learn from each other.",
         image: fmrCourseImg,
-        brochure: "/brochures/DantSpa_FMR_Indirect_Online_2025.pdf",
+        brochure: "https://drive.google.com/file/d/1OIz4eRNauiwVam_H9mw-QWw-X1Ow9-Q_/view?usp=sharing",
       },
     ],
   },
@@ -217,7 +217,7 @@ const courseSections: CourseSection[] = [
         fees: "Rs160000 for a single candidate. 10 Days Course: 10 days theory online, 2 Visit course (Visit 1 - 3 days, Visit 2 – 1 day).",
         postSupport: "Our Aim at the end of the course: You should be able to do any FMR whether it is by crowns or composite. You should be able to diagnose FMR cases. Simplify FMR workflow. Don’t be scared of the hard work and patience involved in the case. Dental Photography and documentation. And much more….. Talk to our previous participants to know more…",
         image: fmrCourseImg,
-        brochure: "/brochures/DANTSPA_Live_Crown_Course_2025.pdf",
+        brochure: "https://drive.google.com/file/d/1NBCYsU_iW_qsXCMwUF7wUEpZR57OZ9cg/view?usp=sharing",
       },
     ],
   },
@@ -255,7 +255,7 @@ const courseSections: CourseSection[] = [
         fees: "For Course Fees - Contact us on WhatsApp +917558585622, +917887685622",
         postSupport: "DM us for more details +917558585622, +917887685622",
         image: photoshopCourseImg,
-        brochure: "/brochures/DANTSPA_Photoshop_Smile_Design_Course-1.pdf",
+        brochure: "https://drive.google.com/file/d/1XAu9Ww8HoNKKX2v7-I4RkrWJMCpZJU1k/view?usp=sharing",
       },
     ],
   },
@@ -289,9 +289,9 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
   return (
     <div
-      className={`bg-white text-black p-4 sm:p-6 md:p-8 border-2 border-[#CD9E42] rounded-lg 
-      w-full sm:w-[600px] md:w-[600px] lg:w-[1000px] xl:w-[1200px] h-auto`}
-    >
+  className={`bg-[#131313] text-white p-4 sm:p-6 md:p-8 border-2 border-[#CD9E42] rounded-lg 
+  w-full sm:w-[600px] md:w-[600px] lg:w-[1000px] xl:w-[1200px] h-auto`}
+>
       <div className="flex flex-col md:flex-row gap-4 md:gap-6 h-full">
         <div className="md:w-1/2 flex flex-col">
           <img 
@@ -407,7 +407,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
       </div>
     </div>
   );
-};
+};35
 
 const Course: React.FC = () => {
   return (
@@ -415,7 +415,7 @@ const Course: React.FC = () => {
       <Navigation />
 
       {courseSections.map((section, idx) => (
-        <div key={idx} className="container mx-auto py-6 sm:py-8 md:py-10">
+        <div key={idx} className="container mx-auto py-20 sm:py-10 md:py-40">
           <div className="text-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#CD9E42]">{section.heading}</h1>
             {section.subheading && (

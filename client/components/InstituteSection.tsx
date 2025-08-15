@@ -12,44 +12,46 @@ const InstituteSection = () => {
         <div className="text-content">
           <div className="text-background">
             <h2>
-              Dr. Debashree Chandak's State-of-the-Art Dental Clinic <br />
-              and Advanced Training Institute <br />
-              in the Heart of Central London
+              Dr. Debashree Chandak <br />
+              Dant Spa Dental Clinic <br />
+              Nagpur, Maharashtra
             </h2>
+            <p className="google-reviews">
+              ⭐ 4.9&nbsp;·&nbsp;181 Google Reviews
+            </p>
           </div>
 
           <div className="highlights">
             <div className="highlight-card">
               <span className="star">★</span>
-              <strong>INTERNATIONAL LECTURER</strong>
-              <p>AESTHETIC & RESTORATIVE DENTISTRY</p>
+              <strong>EXPERT DENTAL CARE</strong>
+              <p>COMPREHENSIVE TREATMENTS</p>
               <div className="highlight-details">
-                Over a decade of experience transforming smiles with artistic
-                vision and scientific precision
+                Offering world-class dental solutions with advanced technology and personalized care.
               </div>
             </div>
 
             <div className="highlight-card">
               <span className="star">★</span>
-              <strong>TOP COSMETIC DENTIST</strong>
-              <p>MULTIPLE AWARD WINNER</p>
+              <strong>AESTHETIC & COSMETIC DENTISTRY</strong>
+              <p>SMILE MAKEOVER SPECIALIST</p>
               <div className="highlight-details">
-                Recognized for excellence in cosmetic dentistry and patient care
+                Transforming smiles with precision, artistry, and modern techniques.
               </div>
             </div>
 
             <div className="highlight-card">
               <span className="star">★</span>
-              <strong>INVISALIGN</strong>
-              <p>PLATINUM PROVIDER & GLOBAL TRAINER</p>
+              <strong>ADVANCED FACILITIES</strong>
+              <p>STATE-OF-THE-ART CLINIC</p>
               <div className="highlight-details">
-                Specialist in minimally invasive techniques and digital smile
-                design
+                Equipped with the latest dental equipment for comfortable and effective treatments.
               </div>
             </div>
           </div>
 
-          <button className="about-button">MEET DR. CHANDAK</button>
+  <a href="/contact"><button className="about-button">BOOK AN APPOINTMENT</button></a>
+          
         </div>
       </div>
     </section>

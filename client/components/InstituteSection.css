@@ -5,7 +5,7 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  color: white; /* Default for all text */
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,23 +26,33 @@
   width: 100%;
   text-align: center;
   color: white;
+  padding: 0 1rem;
 }
 
 .text-background h2 {
-  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  font-size: clamp(1.2rem, 3.5vw, 2.5rem);
   line-height: 1.4;
   background: rgba(0, 0, 0, 0.6);
   display: inline-block;
   padding: clamp(0.6rem, 2vw, 1.2rem) clamp(0.8rem, 3vw, 1.5rem);
   border-radius: 8px;
   color: white;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.google-reviews {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  margin-top: 0.5rem;
+  color: gold;
+  font-weight: bold;
 }
 
 .highlights {
-  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: clamp(1.2rem, 3vw, 2.5rem);
   display: grid;
   gap: clamp(1rem, 2vw, 1.5rem);
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
 }
 
 .highlight-card {
@@ -51,7 +61,7 @@
   border-radius: 10px;
   backdrop-filter: blur(5px);
   transition: transform 0.3s ease;
-  color: white; /* Ensures all text inside is white */
+  color: white;
 }
 
 .highlight-card:hover {
@@ -68,6 +78,8 @@
 .highlight-card strong {
   font-size: clamp(0.95rem, 1.8vw, 1.2rem);
   color: white;
+  display: block;
+  margin-bottom: 0.2rem;
 }
 
 .highlight-card p {
@@ -79,6 +91,7 @@
 .highlight-details {
   margin-top: 0.5rem;
   font-size: clamp(0.8rem, 1.5vw, 1rem);
+  line-height: 1.4;
   color: white;
 }
 
@@ -99,10 +112,27 @@
   transform: scale(1.05);
 }
 
-/* Small mobile adjustments */
+/* Mobile adjustments */
 @media (max-width: 480px) {
   .text-background h2 {
     display: block;
     width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-button {
+    width: 100%;
+  }
+}
+
+/* Ultra-wide monitors */
+@media (min-width: 1600px) {
+  .text-content {
+    max-width: 1400px;
   }
 }
